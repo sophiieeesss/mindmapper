@@ -1,13 +1,14 @@
-const correctPassword = 'secretpassword'; // The password to check
+const correctPassword = 'secretpassword'; // This is your password
 
-function validatePassword() {
-    const inputPassword = document.getElementById('password').value;
+function checkPassword() {
+    const inputPassword = document.getElementById('passwordInput').value;
 
     if (inputPassword === correctPassword) {
-        document.getElementById('password-form').style.display = 'none';
-        document.getElementById('content').style.display = 'block'; // Show content
+        // Hide the login section and show the content
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
     } else {
-        alert('Incorrect password. Please try again.'); // Alert on incorrect password
+        // Display an error message
+        document.getElementById('errorMessage').innerText = 'Incorrect password. Please try again.';
     }
 }
-
