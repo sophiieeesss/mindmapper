@@ -1,24 +1,20 @@
 body {
     background-color: #E8B7D1; /* Pastel rosy lavender */
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Cool retro font */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Retro font */
     margin: 0;
     padding: 20px;
 }
 
 #login {
     text-align: center;
-    margin-top: 100px;
-}
-
-#content {
-    display: none; /* Hide content by default */
+    margin-top: 20%; /* Center the login box vertically */
 }
 
 h1 {
     text-align: center;
     font-size: 2.5em;
     color: #FF6F61; /* Retro color */
-    margin-bottom: 20px;
+    margin: 20px 0; /* Add some space around the header */
 }
 
 button {
@@ -41,8 +37,20 @@ button:hover {
 #navButtons {
     display: flex;
     justify-content: center;
+    margin-top: 20px; /* Add space above the buttons */
 }
 
+#errorMessage {
+    color: red; /* Style for error messages */
+    text-align: center;
+}
+
+/* Additional styling to ensure layout looks good */
+#content {
+    text-align: center; /* Center content in the div */
+}
+
+/* Ensure buttons are styled appropriately */
 #navButtons button {
     cursor: grab;
 }
