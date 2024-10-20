@@ -1,77 +1,52 @@
 body {
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #f7c8e6;
-  color: #5b4e7a;
-  margin: 0;
-  padding: 0;
+    background-color: #E8B7D1; /* Pastel rosy lavender */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Cool retro font */
+    margin: 0;
+    padding: 20px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#login {
+    text-align: center;
+    margin-top: 100px;
+}
+
+#content {
+    display: none; /* Hide content by default */
 }
 
 h1 {
-  font-size: 3em;
-  margin-top: 20px;
-  color: #ff6b6b;
-}
-
-.draggable {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  margin: 10px;
-  border: 2px dashed #5b4e7a;
-  cursor: move;
-}
-
-.draggable img {
-  width: 200px;
-  height: auto;
-}
-
-a {
-  color: #ff6b6b;
-  text-decoration: none;
-  font-size: 1.5em;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.non-clickable {
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 10px;
-  border: 1px solid #5b4e7a;
-  margin-top: 20px;
-  font-size: 1.2em;
-}
-
-.login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 100px;
-}
-
-input {
-  padding: 10px;
-  font-size: 1.2em;
-  margin-top: 10px;
+    text-align: center;
+    font-size: 2.5em;
+    color: #FF6F61; /* Retro color */
+    margin-bottom: 20px;
 }
 
 button {
-  margin-top: 10px;
-  padding: 10px;
-  font-size: 1.2em;
-  background-color: #ff6b6b;
-  border: none;
-  color: white;
-  cursor: pointer;
+    background-color: #FFB74D; /* Pastel orange */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #e63946;
+    background-color: #FFA726; /* Darker pastel orange on hover */
+}
+
+/* Make the header and buttons draggable */
+#navButtons {
+    display: flex;
+    justify-content: center;
+}
+
+#navButtons button {
+    cursor: grab;
+}
+
+#navButtons button:active {
+    cursor: grabbing;
 }
