@@ -1,52 +1,34 @@
-body {
-    background-color: #E8B7D1; /* Pastel rosy lavender */
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Cool retro font */
-    margin: 0;
-    padding: 20px;
+function checkPassword() {
+    const passwordInput = document.getElementById("passwordInput").value;
+    const correctPassword = "secretpassword"; // Password set to 'secretpassword'
+    const errorMessage = document.getElementById("errorMessage");
+
+    if (passwordInput === correctPassword) {
+        document.getElementById("login").style.display = "none"; // Hide login
+        document.getElementById("content").style.display = "block"; // Show content
+        errorMessage.style.display = "none"; // Clear error message
+    } else {
+        errorMessage.textContent = "Incorrect password. Please try again.";
+        errorMessage.style.display = "block"; // Show error message
+    }
 }
 
-#login {
-    text-align: center;
-    margin-top: 100px;
-}
+// Drag and drop functionality for buttons
+const navButtons = document.getElementById('navButtons');
+let isDragging = false;
 
-#content {
-    display: none; /* Hide content by default */
-}
+navButtons.addEventListener('mousedown', () => {
+    isDragging = true;
+});
 
-h1 {
-    text-align: center;
-    font-size: 2.5em;
-    color: #FF6F61; /* Retro color */
-    margin-bottom: 20px;
-}
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+});
 
-button {
-    background-color: #FFB74D; /* Pastel orange */
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 1.2em;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #FFA726; /* Darker pastel orange on hover */
-}
-
-/* Make the header and buttons draggable */
-#navButtons {
-    display: flex;
-    justify-content: center;
-}
-
-#navButtons button {
-    cursor: grab;
-}
-
-#navButtons button:active {
-    cursor: grabbing;
-}
+document.addEventListener('mousemove', (event) => {
+    if (isDragging) {
+        navButtons.style.position = 'absolute';
+        navButtons.style.left = `${event.pageX - navButtons.offsetWidth / 2}px`;
+        navButtons.style.top = `${event.pageY - navButtons.offsetHeight / 2}px`;
+    }
+});
