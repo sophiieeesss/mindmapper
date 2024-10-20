@@ -3,59 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Protected Page</title>
-    <style>
-        body {
-            background-color: #EAB8D1; /* Soft rosy lavender */
-            font-family: Arial, sans-serif;
-        }
-        #content {
-            display: none; /* Hide content by default */
-        }
-        #login {
-            text-align: center;
-            margin-top: 100px;
-        }
-        #errorMessage {
-            color: red;
-            display: none; /* Hide error message by default */
-        }
-    </style>
+    <title>Welcome to Sophie's Mind Map</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Data+Seventy&display=swap" rel="stylesheet"> <!-- Link to Data Seventy font -->
 </head>
 <body>
     <div id="login">
         <h2>Please enter the password:</h2>
         <input type="password" id="passwordInput" placeholder="Password">
-        <button onclick="checkPassword()">Submit</button>
+        <button id="submitButton" onclick="checkPassword()">Submit</button>
         <p id="errorMessage"></p>
     </div>
 
-    <div id="content">
-        <h1>Welcome to My Blog!</h1>
-        <p>Here you will find photos, stories, and other random things.</p>
+    <div id="content" style="display: none;">
+        <h1>Welcome to Sophie's Mind Map</h1>
+        <div id="navButtons">
+            <button onclick="location.href='entries.html'">Entries</button>
+            <button onclick="location.href='gallery.html'">Gallery</button>
+        </div>
         <div>
             <h2>Contact Information</h2>
             <p>Phone: (123) 456-7890</p>
             <p>Address: 123 Example St, Anytown, USA</p>
         </div>
-        <!-- Add more content here -->
     </div>
 
-    <script>
-        function checkPassword() {
-            const passwordInput = document.getElementById("passwordInput").value;
-            const correctPassword = "secretpassword"; // 
-            const errorMessage = document.getElementById("errorMessage");
-
-            if (passwordInput === correctPassword) {
-                document.getElementById("login").style.display = "none"; // Hide login
-                document.getElementById("content").style.display = "block"; // Show content
-                errorMessage.style.display = "none"; // Clear error message
-            } else {
-                errorMessage.textContent = "Incorrect password. Please try again.";
-                errorMessage.style.display = "block"; // Show error message
-            }
-        }
-    </script>
+    <script src="script.js"></script> <!-- Link to the JavaScript file -->
 </body>
 </html>
