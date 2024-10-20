@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="login" id="login">
+    <h2>Enter Password</h2>
+    <input type="password" id="password">
+    <button onclick="checkPassword()">Submit</button>
+    <p id="error-message"></p>
+  </div>
+
+  <div class="container" id="main-content" style="display:none;">
+    <div id="header">
+      <h1>My Retro Blog</h1>
+    </div>
+    <div class="draggable" id="photo" draggable="true">
+      <img src="photo.jpg" alt="Photo" />
+    </div>
+    <div class="draggable" id="story" draggable="true">
+      <p><a href="stories.html">Click here for stories</a></p>
+    </div>
+    <div class="non-clickable">
+      <p>Phone: 123-456-7890</p>
+      <p>Address: 123 Retro Ave, Blog Town</p>
+    </div>
+  </div>
+</body>
+</html>
