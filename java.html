@@ -1,54 +1,52 @@
-// Password protection
-function checkPassword() {
-  const password = document.getElementById('password').value;
-  const correctPassword = 'retro123'; // Change to whatever password you want
-  const loginForm = document.getElementById('login');
-  const mainContent = document.getElementById('main-content');
-  const errorMessage = document.getElementById('error-message');
-
-  if (password === correctPassword) {
-    loginForm.style.display = 'none';
-    mainContent.style.display = 'block';
-  } else {
-    errorMessage.innerText = 'Incorrect password!';
-  }
+body {
+    background-color: #E8B7D1; /* Pastel rosy lavender */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Cool retro font */
+    margin: 0;
+    padding: 20px;
 }
 
-// Drag and Drop functionality
-const draggables = document.querySelectorAll('.draggable');
-const container = document.querySelector('.container');
+#login {
+    text-align: center;
+    margin-top: 100px;
+}
 
-draggables.forEach(draggable => {
-  draggable.addEventListener('dragstart', () => {
-    draggable.classList.add('dragging');
-  });
+#content {
+    display: none; /* Hide content by default */
+}
 
-  draggable.addEventListener('dragend', () => {
-    draggable.classList.remove('dragging');
-  });
-});
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #FF6F61; /* Retro color */
+    margin-bottom: 20px;
+}
 
-container.addEventListener('dragover', e => {
-  e.preventDefault();
-  const afterElement = getDragAfterElement(container, e.clientY);
-  const draggable = document.querySelector('.dragging');
-  if (afterElement == null) {
-    container.appendChild(draggable);
-  } else {
-    container.insertBefore(draggable, afterElement);
-  }
-});
+button {
+    background-color: #FFB74D; /* Pastel orange */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-function getDragAfterElement(container, y) {
-  const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')];
+button:hover {
+    background-color: #FFA726; /* Darker pastel orange on hover */
+}
 
-  return draggableElements.reduce((closest, child) => {
-    const box = child.getBoundingClientRect();
-    const offset = y - box.top - box.height / 2;
-    if (offset < 0 && offset > closest.offset) {
-      return { offset: offset, element: child };
-    } else {
-      return closest;
-    }
-  }, { offset: Number.NEGATIVE_INFINITY }).element;
+/* Make the header and buttons draggable */
+#navButtons {
+    display: flex;
+    justify-content: center;
+}
+
+#navButtons button {
+    cursor: grab;
+}
+
+#navButtons button:active {
+    cursor: grabbing;
 }
