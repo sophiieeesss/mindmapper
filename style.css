@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
   font-family: 'Courier New', Courier, monospace;
   background-color: #f7c8e6;
   color: #5b4e7a;
@@ -74,4 +75,59 @@ button {
 
 button:hover {
   background-color: #e63946;
+=======
+    background-color: #EAB8D1; /* Pastel rosy lavender */
+    font-family: 'Data Seventy', sans-serif; /* Using Data Seventy font */
+    margin: 0;
+    padding: 20px;
+}
+
+#login {
+    text-align: center;
+    margin-top: 20%; /* Center the login box vertically */
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #FF6F61; /* Retro color */
+    margin: 20px 0; /* Add some space around the header */
+}
+
+button {
+    background-color: #6C63FF; /* Change to a different pastel color (e.g., pastel purple) */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #5758BB; /* Darker shade on hover */
+}
+
+/* Make the header and buttons draggable */
+#navButtons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Add space above the buttons */
+}
+
+#errorMessage {
+    color: red; /* Style for error messages */
+    text-align: center;
+}
+
+/* Ensure buttons are styled appropriately */
+#navButtons button {
+    cursor: grab;
+}
+
+#navButtons button:active {
+    cursor: grabbing;
+>>>>>>> f6ca985632f5bdca28fbb482ea86f1f0d3bcaa66
 }
