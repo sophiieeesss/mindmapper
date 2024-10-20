@@ -1,21 +1,23 @@
-let offsetX, offsetY, draggedElement;
-
-document.querySelectorAll('.movable').forEach(element => {
-    element.addEventListener('mousedown', function(event) {
-        draggedElement = this;
-        offsetX = event.clientX - draggedElement.getBoundingClientRect().left;
-        offsetY = event.clientY - draggedElement.getBoundingClientRect().top;
-        document.addEventListener('mousemove', mouseMove);
-        document.addEventListener('mouseup', mouseUp);
-    });
+// Make elements draggable
+const draggables = document.querySelectorAll('.draggable');
+draggables.forEach(draggable => {
+    draggable.addEventListener('mousedown', dragStart);
 });
 
-function mouseMove(event) {
-    draggedElement.style.left = (event.clientX - offsetX) + 'px';
-    draggedElement.style.top = (event.clientY - offsetY) + 'px';
-}
+function dragStart(e) {
+    const draggable = e.target;
 
-function mouseUp() {
-    document.removeEventListener('mousemove', mouseMove);
-    document.removeEventListener('mouseup', mouseUp);
+    function dragMove(e) {
+        draggable.style.position = 'absolute';
+        draggable.style.left = e.pageX - draggable.offsetWidth / 2 + 'px';
+        draggable.style.top = e.pageY - draggable.offsetHeight / 2 + 'px';
+    }
+
+    function dragEnd() {
+        document.removeEventListener('mousemove', dragMove);
+        document.removeEventListener('mouseup', dragEnd);
+    }
+
+    document.addEventListener('mousemove', dragMove);
+    document.addEventListener('mouseup', dragEnd);
 }
