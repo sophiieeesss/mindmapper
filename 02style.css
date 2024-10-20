@@ -1,29 +1,37 @@
 body {
-    background-color: #dec2e7; /* Pastel background color */
-    font-family: 'Data Seventy', sans-serif; /* Data Seventy font */
-    color: black; /* Text color */
+    background-color: #dec2e7;
+    font-family: 'Data Seventy', sans-serif;
+    color: black;
+    margin: 0;
+    padding: 20px;
 }
 
-#login {
-    text-align: center; /* Center the login content */
+#login, #content {
+    position: relative;
+    margin: 20px 0;
 }
 
 h1, h2 {
-    text-align: center; /* Center headers */
+    text-align: center;
 }
 
 #navButtons {
     display: flex;
-    justify-content: center; /* Center the buttons */
-    gap: 20px; /* Space between buttons */
+    justify-content: center;
+    margin-top: 20px;
 }
 
 button {
-    padding: 10px 20px; /* Padding for buttons */
-    cursor: move; /* Change cursor to indicate drag */
-    position: absolute; /* Allow drag-and-drop */
+    margin: 0 10px;
+    padding: 10px;
+    cursor: pointer;
 }
 
-.movable {
-    position: absolute; /* Allow buttons to be moved */
+/* Style for draggable elements */
+.draggable {
+    border: 2px dashed black;
+    padding: 10px;
+    margin: 5px;
+    width: fit-content;
+    position: absolute; /* Allows dragging */
 }
