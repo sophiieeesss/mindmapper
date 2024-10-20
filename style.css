@@ -1,36 +1,29 @@
 body {
-    background-color: #EAB8E4; /* Soft rosy lavender */
-    font-family: 'Data Seventy', sans-serif; /* Ensure the font is available */
-    margin: 0;
-    padding: 20px;
+    background-color: #dec2e7; /* Pastel background color */
+    font-family: 'Data Seventy', sans-serif; /* Data Seventy font */
+    color: black; /* Text color */
 }
 
-h1 {
-    text-align: center;
-    color: #5B4B9A; /* Darker pastel color for header */
-    margin-bottom: 20px;
+#login {
+    text-align: center; /* Center the login content */
+}
+
+h1, h2 {
+    text-align: center; /* Center headers */
+}
+
+#navButtons {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    gap: 20px; /* Space between buttons */
 }
 
 button {
-    background-color: #BBA0D3; /* Soft pastel color for buttons */
-    color: #FFFFFF;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    padding: 10px 20px; /* Padding for buttons */
+    cursor: move; /* Change cursor to indicate drag */
+    position: absolute; /* Allow drag-and-drop */
 }
 
-button:hover {
-    background-color: #9B84C3; /* Slightly darker on hover */
-}
-
-#password-form {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.input-container {
-    margin-bottom: 20px;
+.movable {
+    position: absolute; /* Allow buttons to be moved */
 }
