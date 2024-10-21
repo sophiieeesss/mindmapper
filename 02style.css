@@ -1,10 +1,11 @@
 body {
-    font-family: 'Data Seventy', sans-serif;
+    font-family: 'Recoleta', sans-serif;
     background-color: #dec2e7;
     color: black;
 }
 
-h1, h2, p {
+h1 {
+    font-size: 2.5em;
     text-align: center;
 }
 
@@ -14,21 +15,24 @@ h1, h2, p {
 }
 
 button {
-    font-family: 'Data Seventy', sans-serif;
-    background-color: black;
-    color: white;
+    font-size: 1.2em;
     padding: 10px 20px;
     margin: 10px;
+    background-color: black;
+    color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #888;
+#phone {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
 }
 
-/* Draggable styling */
-.draggable {
+/* Make the header and phone number draggable */
+#mainHeader, #phone {
     position: absolute;
     cursor: move;
 }
