@@ -1,24 +1,34 @@
-// Drag and Drop functionality
-let dragItem = null;
+// Enable drag and drop for the header and phone number
+function makeDraggable(element) {
+    element.onmousedown = function(event) {
+        let shiftX = event.clientX - element.getBoundingClientRect().left;
+        let shiftY = event.clientY - element.getBoundingClientRect().top;
 
-document.querySelectorAll('.draggable').forEach(item => {
-    item.addEventListener('mousedown', dragStart);
-    item.addEventListener('mouseup', dragEnd);
-    item.addEventListener('mousemove', drag);
+        function moveAt(pageX, pageY) {
+            element.style.left = pageX - shiftX + 'px';
+            element.style.top = pageY - shiftY + 'px';
+        }
+
+        moveAt(event.pageX, event.pageY);
+
+        function onMouseMove(event) {
+            moveAt(event.pageX, event.pageY);
+        }
+
+        document.addEventListener('mousemove', onMouseMove);
+
+        element.onmouseup = function() {
+            document.removeEventListener('mousemove', onMouseMove);
+            element.onmouseup = null;
+        };
+    };
+
+    element.ondragstart = function() {
+        return false;
+    };
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    makeDraggable(document.getElementById('mainHeader'));
+    makeDraggable(document.getElementById('phone'));
 });
-
-function dragStart(e) {
-    dragItem = this;
-    this.style.zIndex = 1000; // Bring to front when dragging
-}
-
-function dragEnd() {
-    dragItem = null;
-}
-
-function drag(e) {
-    if (dragItem) {
-        dragItem.style.left = e.pageX - dragItem.offsetWidth / 2 + 'px';
-        dragItem.style.top = e.pageY - dragItem.offsetHeight / 2 + 'px';
-    }
-}
