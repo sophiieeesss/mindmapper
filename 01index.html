@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Sophie's Mind Map</title>
-    <link rel="stylesheet" href="02style.css"> <!-- Link to the CSS file -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- VHS font -->
+    <link rel="stylesheet" href="02style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> <!-- VHS font -->
 </head>
 <body>
     <div id="login">
@@ -16,18 +16,18 @@
     </div>
 
     <div id="content" style="display: none;">
-        <h1 id="mainHeader" class="draggable">Welcome to Sophie's Mind Map</h1>
+        <h1 class="draggable">Welcome to Sophie's Mind Map</h1>
+        <p class="draggable">Phone: 250-551-0615</p>
+
         <div id="navButtons">
             <button class="draggable" onclick="location.href='entries.html'">Entries</button>
             <button class="draggable" onclick="location.href='gallery.html'">Gallery</button>
         </div>
-        <div class="draggable">
-            <p>Phone: (250) 551-0615</p>
-        </div>
-        <img src="imgfuji.jpeg" id="dragImage" class="draggable" alt="Fuji Image" width="300">
+
+        <img src="imgfuji.jpeg" class="draggable" alt="Mount Fuji Image">
     </div>
 
-    <script src="03java.js"></script> <!-- Link to the JavaScript file for password -->
-    <script src="04drag.js"></script> <!-- Link to the drag-and-drop script -->
+    <script src="03java.js"></script>
+    <script src="04drag.js"></script>
 </body>
 </html>
