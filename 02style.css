@@ -1,7 +1,11 @@
 body {
-    background-color: #dec2e7; /* Soft rosy lavender */
-    font-family: 'VT323', monospace; /* Classic VHS font */
-    color: black; /* Black text */
+    background-color: #dec2e7;
+    font-family: 'Recoleta', sans-serif;
+    color: black;
+}
+
+h1, h2 {
+    text-align: center;
 }
 
 #login {
@@ -9,24 +13,23 @@ body {
     margin-top: 50px;
 }
 
-#content {
-    text-align: center;
-    margin-top: 20px;
+#navButtons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
 }
 
 button {
-    background-color: black; /* Black buttons */
-    color: white; /* White text on buttons */
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
+    margin: 0 10px;
+    padding: 10px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #555; /* Darker shade on hover */
-}
-
-.draggable {
-    position: absolute; /* Allow dragging */
+img {
+    width: 200px; /* Adjust as needed */
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border: 5px solid white; /* Optional styling */
 }
