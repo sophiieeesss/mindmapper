@@ -1,31 +1,25 @@
-// Function to make an element draggable
-function makeDraggable(element) {
-    let isDragging = false;
-    let offsetX = 0;
-    let offsetY = 0;
+let isDragging = false;
+let currentDraggable = null;
+let offsetX, offsetY;
 
-    element.addEventListener('mousedown', (event) => {
+document.addEventListener('mousedown', function(event) {
+    if (event.target.classList.contains('draggable')) {
         isDragging = true;
-        offsetX = event.clientX - element.getBoundingClientRect().left;
-        offsetY = event.clientY - element.getBoundingClientRect().top;
-        element.style.position = 'absolute'; // Ensure position is absolute for dragging
-        element.style.zIndex = 1000; // Bring to front while dragging
-    });
+        currentDraggable = event.target;
+        offsetX = event.clientX - currentDraggable.getBoundingClientRect().left;
+        offsetY = event.clientY - currentDraggable.getBoundingClientRect().top;
+    }
+});
 
-    document.addEventListener('mousemove', (event) => {
-        if (isDragging) {
-            const x = event.clientX - offsetX;
-            const y = event.clientY - offsetY;
-            element.style.left = `${x}px`;
-            element.style.top = `${y}px`;
-        }
-    });
+document.addEventListener('mousemove', function(event) {
+    if (isDragging && currentDraggable) {
+        currentDraggable.style.position = 'absolute';
+        currentDraggable.style.left = (event.clientX - offsetX) + 'px';
+        currentDraggable.style.top = (event.clientY - offsetY) + 'px';
+    }
+});
 
-    document.addEventListener('mouseup', () => {
-        isDragging = false;
-    });
-}
-
-// Select all elements that need to be draggable
-const draggableElements = document.querySelectorAll('.draggable');
-draggableElements.forEach(element => makeDraggable(element));
+document.addEventListener('mouseup', function() {
+    isDragging = false;
+    currentDraggable = null;
+});
