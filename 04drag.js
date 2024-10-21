@@ -1,27 +1,42 @@
 let isDragging = false;
-let offsetX, offsetY, draggedElement;
+let currentElement = null;
+let offsetX, offsetY;
 
-function makeDraggable(element) {
-    element.addEventListener('mousedown', function(e) {
+document.querySelectorAll('.draggable').forEach(element => {
+    element.addEventListener('mousedown', (e) => {
         isDragging = true;
-        draggedElement = element;
+        currentElement = element;
         offsetX = e.clientX - element.getBoundingClientRect().left;
         offsetY = e.clientY - element.getBoundingClientRect().top;
+        element.style.cursor = 'grabbing';
     });
-}
 
-document.addEventListener('mousemove', function(e) {
-    if (isDragging && draggedElement) {
-        draggedElement.style.position = 'absolute';
-        draggedElement.style.left = (e.clientX - offsetX) + 'px';
-        draggedElement.style.top = (e.clientY - offsetY) + 'px';
+    element.addEventListener('mouseup', () => {
+        isDragging = false;
+        currentElement = null;
+        element.style.cursor = 'grab';
+    });
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (isDragging && currentElement) {
+        currentElement.style.left = (e.clientX - offsetX) + 'px';
+        currentElement.style.top = (e.clientY - offsetY) + 'px';
     }
 });
 
-document.addEventListener('mouseup', function() {
-    isDragging = false;
-    draggedElement = null;
+// Ensure phone number is draggable as well
+const phone = document.getElementById('phone');
+phone.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    currentElement = phone;
+    offsetX = e.clientX - phone.getBoundingClientRect().left;
+    offsetY = e.clientY - phone.getBoundingClientRect().top;
+    phone.style.cursor = 'grabbing';
 });
 
-// Make elements draggable
-document.querySelectorAll('.draggable').forEach(makeDraggable);
+phone.addEventListener('mouseup', () => {
+    isDragging = false;
+    currentElement = null;
+    phone.style.cursor = 'grab';
+});
