@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Sophie's Mind Map</title>
     <link rel="stylesheet" href="02style.css"> <!-- Link to the CSS file -->
-    <link href="https://fonts.googleapis.com/css2?family=Data+Seventy&display=swap" rel="stylesheet"> <!-- Link to Data Seventy font -->
-    <link href="https://fonts.googleapis.com/css2?family=VHS&display=swap" rel="stylesheet"> <!-- Link to VHS font -->
+    <link href="https://fonts.googleapis.com/css2?family=VCR+OSD+Mono&display=swap" rel="stylesheet"> <!-- Link to VHS font -->
 </head>
 <body>
     <div id="login">
@@ -17,17 +16,19 @@
     </div>
 
     <div id="content" style="display: none;">
-        <h1 class="draggable" id="header">Welcome to Sophie's Mind Map</h1>
+        <h1 id="header">Welcome to Sophie's Mind Map</h1>
         <div id="navButtons">
-            <button class="draggable" onclick="location.href='02gallery.html'">Gallery</button>
-            <button class="draggable" onclick="location.href='entries.html'">Entries</button>
+            <button id="entriesButton" onclick="location.href='02entries.html'">Entries</button>
+            <button id="galleryButton" onclick="location.href='02gallery.html'">Gallery</button>
         </div>
-        <p class="draggable" id="phoneNumber">Phone: 250-551-0615</p>
-        <img src="imgfuji.jpeg" id="fujiImage" class="draggable" style="width: 200px; height: auto;">
-        <img src="imgspain.jpeg" id="spainImage" class="draggable" style="width: 200px; height: auto;">
+        <div>
+            <p id="phone">Phone: <span contenteditable="true">250-551-0615</span></p>
+        </div>
+        <img src="imgfuji.jpeg" id="imgfuji" class="draggable" alt="Fuji Image">
+        <img src="imgspain.jpeg" id="imgspain" class="draggable" alt="Spain Image">
     </div>
 
     <script src="03java.js"></script> <!-- Link to the JavaScript file -->
-    <script src="04drag.js"></script> <!-- Link to the drag-and-drop functionality -->
+    <script src="04drag.js"></script> <!-- Link to the Drag and Drop JavaScript file -->
 </body>
 </html>
