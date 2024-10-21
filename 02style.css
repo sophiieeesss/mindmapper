@@ -1,22 +1,36 @@
 body {
-    background-color: #dec2e7;
-    font-family: 'VHS', 'Data Seventy', sans-serif;
-    color: black;
+    background-color: #dec2e7; /* Soft rosy lavender */
+    color: black; /* Text color */
+    font-family: 'VCR OSD Mono', monospace; /* VHS font */
 }
 
-h1, p {
-    cursor: move; /* Makes draggable elements clear to the user */
-}
-
-button {
-    background-color: white;
-    border: 1px solid black;
-    padding: 10px;
-    margin: 5px;
-    font-family: 'VHS', 'Data Seventy', sans-serif;
+h1, h2 {
+    text-align: center;
 }
 
 #login {
     text-align: center;
-    margin-top: 100px;
+}
+
+.draggable {
+    width: 200px; /* Set desired width */
+    cursor: grab;
+    position: absolute; /* Allow dragging */
+}
+
+/* Gallery styles */
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.photo-container {
+    margin: 20px;
+    display: inline-block;
+    background: white; /* White background for polaroid effect */
+    border: 1px solid black;
+    padding: 10px;
+    position: relative; /* Position for caption */
 }
