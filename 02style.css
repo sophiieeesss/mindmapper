@@ -1,6 +1,6 @@
 body {
-    background-color: #dec2e7; /* Soft rosy lavender background */
-    font-family: 'Press Start 2P', sans-serif; /* Classic VHS font */
+    background-color: #dec2e7; /* Soft rosy lavender */
+    font-family: 'VT323', monospace; /* Classic VHS font */
     color: black; /* Black text */
 }
 
@@ -11,9 +11,22 @@ body {
 
 #content {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 20px;
+}
+
+button {
+    background-color: black; /* Black buttons */
+    color: white; /* White text on buttons */
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555; /* Darker shade on hover */
 }
 
 .draggable {
-    cursor: grab;
+    position: absolute; /* Allow dragging */
 }
