@@ -8,7 +8,8 @@ function makeDraggable(element) {
         isDragging = true;
         offsetX = event.clientX - element.getBoundingClientRect().left;
         offsetY = event.clientY - element.getBoundingClientRect().top;
-        element.style.position = 'absolute';
+        element.style.position = 'absolute'; // Ensure position is absolute for dragging
+        element.style.zIndex = 1000; // Bring to front while dragging
     });
 
     document.addEventListener('mousemove', (event) => {
