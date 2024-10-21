@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Sophie's Mind Map</title>
     <link rel="stylesheet" href="02style.css">
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> <!-- VHS font -->
+    <link href="https://fonts.googleapis.com/css2?family=Recoleta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Data+Seventy&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="login">
@@ -16,16 +17,14 @@
     </div>
 
     <div id="content" style="display: none;">
-        <h1 class="draggable">Welcome to Sophie's Mind Map</h1>
-        <p class="draggable">Phone: 250-551-0615</p>
-
+        <h1 class="draggable" id="header">Welcome to Sophie's Mind Map</h1>
         <div id="navButtons">
+            <button class="draggable" onclick="location.href='02gallery.html'">Gallery</button>
             <button class="draggable" onclick="location.href='entries.html'">Entries</button>
-            <button class="draggable" onclick="location.href='gallery.html'">Gallery</button>
         </div>
-
-        <img src="imgfuji.jpeg" class="draggable" alt="Mount Fuji Image">
-        <img src="imgspain.jpeg" class="draggable" alt="Spain Image">
+        <p class="draggable" id="phoneNumber">Phone: 250-551-0615</p>
+        <img id="imgFuji" src="imgfuji.jpeg" class="draggable" alt="Fuji">
+        <img id="imgSpain" src="imgspain.jpeg" class="draggable" alt="Spain">
     </div>
 
     <script src="03java.js"></script>
