@@ -1,25 +1,24 @@
 // Enable drag and drop for the header and phone number
 function makeDraggable(element) {
+    let isDragging = false;
+    let shiftX, shiftY;
+
     element.onmousedown = function(event) {
-        let shiftX = event.clientX - element.getBoundingClientRect().left;
-        let shiftY = event.clientY - element.getBoundingClientRect().top;
+        isDragging = true;
+        shiftX = event.clientX - element.getBoundingClientRect().left;
+        shiftY = event.clientY - element.getBoundingClientRect().top;
 
-        function moveAt(pageX, pageY) {
-            element.style.left = pageX - shiftX + 'px';
-            element.style.top = pageY - shiftY + 'px';
-        }
+        document.onmousemove = function(event) {
+            if (isDragging) {
+                element.style.left = event.pageX - shiftX + 'px';
+                element.style.top = event.pageY - shiftY + 'px';
+            }
+        };
 
-        moveAt(event.pageX, event.pageY);
-
-        function onMouseMove(event) {
-            moveAt(event.pageX, event.pageY);
-        }
-
-        document.addEventListener('mousemove', onMouseMove);
-
-        element.onmouseup = function() {
-            document.removeEventListener('mousemove', onMouseMove);
-            element.onmouseup = null;
+        document.onmouseup = function() {
+            isDragging = false;
+            document.onmousemove = null;
+            document.onmouseup = null;
         };
     };
 
