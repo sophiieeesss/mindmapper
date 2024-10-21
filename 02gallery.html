@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
-    <link rel="stylesheet" href="02style.css">
+    <link rel="stylesheet" href="02style.css"> <!-- Link to the CSS file -->
 </head>
 <body>
-    <h1>Photo Gallery</h1>
-    <div class="gallery-container">
-        <div class="photo-frame">
-            <img src="imgfuji.jpeg" alt="Fuji">
-            <textarea placeholder="Edit your description here..."></textarea>
+    <a href="01index.html" id="backArrow">← Back</a>
+    <div id="gallery">
+        <div class="photo-container">
+            <img src="imgfuji.jpeg" alt="Fuji" class="gallery-image">
+            <textarea class="caption" placeholder="Edit your caption..."></textarea>
         </div>
-        <div class="photo-frame">
-            <img src="imgspain.jpeg" alt="Spain">
-            <textarea placeholder="Edit your description here..."></textarea>
+        <div class="photo-container">
+            <img src="imgspain.jpeg" alt="Spain" class="gallery-image">
+            <textarea class="caption" placeholder="Edit your caption..."></textarea>
         </div>
-        <!-- Add more photos as needed -->
+        <!-- Additional images can be added here -->
     </div>
+
+    <script src="03java.js"></script> <!-- Link to the JavaScript file -->
 </body>
 </html>
