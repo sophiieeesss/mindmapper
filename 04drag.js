@@ -1,23 +1,24 @@
-// Make elements draggable
-const draggables = document.querySelectorAll('.draggable');
-draggables.forEach(draggable => {
-    draggable.addEventListener('mousedown', dragStart);
+// Drag and Drop functionality
+let dragItem = null;
+
+document.querySelectorAll('.draggable').forEach(item => {
+    item.addEventListener('mousedown', dragStart);
+    item.addEventListener('mouseup', dragEnd);
+    item.addEventListener('mousemove', drag);
 });
 
 function dragStart(e) {
-    const draggable = e.target;
+    dragItem = this;
+    this.style.zIndex = 1000; // Bring to front when dragging
+}
 
-    function dragMove(e) {
-        draggable.style.position = 'absolute';
-        draggable.style.left = e.pageX - draggable.offsetWidth / 2 + 'px';
-        draggable.style.top = e.pageY - draggable.offsetHeight / 2 + 'px';
+function dragEnd() {
+    dragItem = null;
+}
+
+function drag(e) {
+    if (dragItem) {
+        dragItem.style.left = e.pageX - dragItem.offsetWidth / 2 + 'px';
+        dragItem.style.top = e.pageY - dragItem.offsetHeight / 2 + 'px';
     }
-
-    function dragEnd() {
-        document.removeEventListener('mousemove', dragMove);
-        document.removeEventListener('mouseup', dragEnd);
-    }
-
-    document.addEventListener('mousemove', dragMove);
-    document.addEventListener('mouseup', dragEnd);
 }
