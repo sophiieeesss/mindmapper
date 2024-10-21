@@ -1,34 +1,30 @@
-const draggables = document.querySelectorAll('.draggable');
+// Function to make an element draggable
+function makeDraggable(element) {
+    let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
 
-draggables.forEach(draggable => {
-    draggable.addEventListener('mousedown', function (e) {
-        const element = e.target;
-        let shiftX = e.clientX - element.getBoundingClientRect().left;
-        let shiftY = e.clientY - element.getBoundingClientRect().top;
-
+    element.addEventListener('mousedown', (event) => {
+        isDragging = true;
+        offsetX = event.clientX - element.getBoundingClientRect().left;
+        offsetY = event.clientY - element.getBoundingClientRect().top;
         element.style.position = 'absolute';
-        element.style.zIndex = 1000;
-
-        function moveAt(pageX, pageY) {
-            element.style.left = pageX - shiftX + 'px';
-            element.style.top = pageY - shiftY + 'px';
-        }
-
-        moveAt(e.pageX, e.pageY);
-
-        function onMouseMove(event) {
-            moveAt(event.pageX, event.pageY);
-        }
-
-        document.addEventListener('mousemove', onMouseMove);
-
-        element.onmouseup = function () {
-            document.removeEventListener('mousemove', onMouseMove);
-            element.onmouseup = null;
-        };
     });
 
-    draggable.ondragstart = function () {
-        return false;
-    };
-});
+    document.addEventListener('mousemove', (event) => {
+        if (isDragging) {
+            const x = event.clientX - offsetX;
+            const y = event.clientY - offsetY;
+            element.style.left = `${x}px`;
+            element.style.top = `${y}px`;
+        }
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+}
+
+// Select all elements that need to be draggable
+const draggableElements = document.querySelectorAll('.draggable');
+draggableElements.forEach(element => makeDraggable(element));
