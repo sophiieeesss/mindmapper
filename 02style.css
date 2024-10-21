@@ -1,38 +1,19 @@
 body {
-    font-family: 'Press Start 2P', sans-serif; /* VHS-style font */
-    background-color: #dec2e7;
-    color: black;
+    background-color: #dec2e7; /* Soft rosy lavender background */
+    font-family: 'Press Start 2P', sans-serif; /* Classic VHS font */
+    color: black; /* Black text */
 }
 
-h1 {
-    font-size: 2.5em;
+#login {
     text-align: center;
+    margin-top: 50px;
 }
 
-#navButtons {
+#content {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
-button {
-    font-size: 1.2em;
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#phone {
-    text-align: center;
-    font-size: 1.2em;
-    margin-top: 20px;
-}
-
-/* Make the header and phone number draggable */
-#mainHeader, #phone {
-    position: absolute;
-    cursor: move;
+.draggable {
+    cursor: grab;
 }
