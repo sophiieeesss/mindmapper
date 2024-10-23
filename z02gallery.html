@@ -4,23 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
-    <link rel="stylesheet" href="z03style.css"> <!-- Link to the CSS file -->
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> <!-- VHS font -->
+    <link rel="stylesheet" href="z03style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Data+Seventy&family=VCR+OSD+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="index.html" id="backArrow" style="font-family: 'VT323', monospace;">&larr; Back</a>
-
-    <div id="gallery">
+    <button id="backButton" onclick="window.location.href='index.html'">← Back</button>
+    <div class="gallery-container">
         <div class="photo-container">
-            <img src="zimgfuji.jpeg" alt="Fuji">
-            <textarea id="caption1" placeholder="Write a caption..."></textarea>
+            <img src="zimgfuji.jpeg" alt="Fuji" class="gallery-image">
+            <textarea class="caption" placeholder="Add caption..."></textarea>
         </div>
         <div class="photo-container">
-            <img src="zimgspain.jpeg" alt="Spain">
-            <textarea id="caption2" placeholder="Write a caption..."></textarea>
+            <img src="zimgspain.jpeg" alt="Spain" class="gallery-image">
+            <textarea class="caption" placeholder="Add caption..."></textarea>
         </div>
     </div>
-
-    <script src="z06gallery.js"></script> <!-- Gallery JavaScript -->
+    <script src="z06gallery.js"></script>
 </body>
 </html>
