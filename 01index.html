@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Sophie's Mind Map</title>
     <link rel="stylesheet" href="02style.css"> <!-- Link to the CSS file -->
-    <link href="https://fonts.googleapis.com/css2?family=VCR+OSD+Mono&display=swap" rel="stylesheet"> <!-- Link to VHS font -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> <!-- VHS font -->
 </head>
 <body>
     <div id="login">
@@ -16,19 +16,19 @@
     </div>
 
     <div id="content" style="display: none;">
-        <h1 id="header">Welcome to Sophie's Mind Map</h1>
-        <div id="navButtons">
-            <button id="entriesButton" onclick="location.href='02entries.html'">Entries</button>
-            <button id="galleryButton" onclick="location.href='02gallery.html'">Gallery</button>
+        <h1 id="mainHeader" class="draggable">Welcome to Sophie's Mind Map</h1>
+        <div id="navButtons" class="draggable">
+            <button onclick="location.href='02gallery.html'">Gallery</button>
+            <button onclick="location.href='03entries.html'">Entries</button>
         </div>
-        <div>
-            <p id="phone">Phone: <span contenteditable="true">250-551-0615</span></p>
+        <div id="contactInfo" class="draggable">
+            <p>Phone: 250-551-0615</p>
         </div>
-        <img src="imgfuji.jpeg" id="imgfuji" class="draggable" alt="Fuji Image">
-        <img src="imgspain.jpeg" id="imgspain" class="draggable" alt="Spain Image">
+        <img src="imgfuji.jpeg" id="fujiImg" class="draggable" alt="Image of Fuji">
+        <img src="imgspain.jpeg" id="spainImg" class="draggable" alt="Image of Spain">
     </div>
 
-    <script src="03java.js"></script> <!-- Link to the JavaScript file -->
-    <script src="04drag.js"></script> <!-- Link to the Drag and Drop JavaScript file -->
+    <script src="03java.js"></script> <!-- JavaScript -->
+    <script src="04drag.js"></script> <!-- Drag-and-drop JavaScript -->
 </body>
 </html>
