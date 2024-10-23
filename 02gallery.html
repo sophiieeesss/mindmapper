@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
     <link rel="stylesheet" href="02style.css"> <!-- Link to the CSS file -->
-    <link href="https://fonts.googleapis.com/css2?family=VCR+OSD+Mono&display=swap" rel="stylesheet"> <!-- Link to VHS font -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> <!-- VHS font -->
 </head>
 <body>
-    <a href="01index.html" style="text-decoration: none;">&#8592; Back</a> <!-- Back arrow to main page -->
+    <a href="01index.html" id="backArrow" style="font-family: 'VT323', monospace;">&larr; Back</a>
+
     <div id="gallery">
         <div class="photo-container">
-            <img src="imgfuji.jpeg" alt="Fuji Image" style="width: 200px;">
-            <textarea rows="2" placeholder="Edit caption here..."></textarea>
+            <img src="imgfuji.jpeg" alt="Fuji">
+            <textarea id="caption1" placeholder="Write a caption..."></textarea>
         </div>
         <div class="photo-container">
-            <img src="imgspain.jpeg" alt="Spain Image" style="width: 200px;">
-            <textarea rows="2" placeholder="Edit caption here..."></textarea>
+            <img src="imgspain.jpeg" alt="Spain">
+            <textarea id="caption2" placeholder="Write a caption..."></textarea>
         </div>
     </div>
+
+    <script src="05gallery.js"></script> <!-- Gallery JavaScript -->
 </body>
 </html>
