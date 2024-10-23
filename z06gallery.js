@@ -1,12 +1,11 @@
-window.onload = function() {
-    document.getElementById('caption1').value = localStorage.getItem('caption1') || '';
-    document.getElementById('caption2').value = localStorage.getItem('caption2') || '';
+// Functionality for gallery captions
+document.querySelectorAll('.caption').forEach((textarea) => {
+    // Load caption from localStorage
+    const photoIndex = Array.from(textarea.closest('.photo-container').parentNode.children).indexOf(textarea.closest('.photo-container'));
+    textarea.value = localStorage.getItem(`caption_${photoIndex}`) || "";
 
-    document.getElementById('caption1').oninput = function() {
-        localStorage.setItem('caption1', this.value);
-    };
-    
-    document.getElementById('caption2').oninput = function() {
-        localStorage.setItem('caption2', this.value);
-    };
-};
+    // Save caption to localStorage on input
+    textarea.addEventListener('input', () => {
+        localStorage.setItem(`caption_${photoIndex}`, textarea.value);
+    });
+});
