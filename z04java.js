@@ -1,11 +1,15 @@
-const password = "secretpassword";
+const correctPassword = "secretpassword";
 
 function checkPassword() {
-    const inputPassword = document.getElementById('passwordInput').value;
-    if (inputPassword === password) {
-        document.getElementById('login').style.display = 'none';
-        document.getElementById('content').style.display = 'block';
+    const passwordInput = document.getElementById("passwordInput").value;
+    const errorMessage = document.getElementById("errorMessage");
+    const content = document.getElementById("content");
+
+    if (passwordInput === correctPassword) {
+        errorMessage.textContent = "";
+        content.style.display = "block";
+        document.getElementById("login").style.display = "none";
     } else {
-        document.getElementById('errorMessage').innerText = 'Incorrect password, try again!';
+        errorMessage.textContent = "Incorrect password. Please try again.";
     }
 }
